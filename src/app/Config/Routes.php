@@ -34,6 +34,14 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+
+$routes->get('aircrafts-list', 'AircraftCRUD::index');
+$routes->get('aircraft-form', 'AircraftCRUD::create');
+$routes->post('submit-form', 'AircraftCRUD::store');
+$routes->get('edit-view/(:num)', 'AircraftCRUD::singleAircraft/$1');
+$routes->post('update', 'AircraftCRUD::update');
+$routes->get('delete/(:num)', 'AircraftCRUD::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
