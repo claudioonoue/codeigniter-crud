@@ -40,10 +40,9 @@ class Aircraft extends BaseController
         return view('aircraft/edit', $data);
     }
 
-    public function update()
+    public function update($id = null)
     {
         $aircraftModel = new AircraftModel();
-        $id = $this->request->getVar('id');
         $data = [
             'model' => $this->request->getVar('model'),
             'brand' => $this->request->getVar('brand'),

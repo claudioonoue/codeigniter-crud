@@ -20,9 +20,7 @@
 
 <body>
     <div class="container mt-5">
-        <form method="post" id="update_aircraft" name="update_aircraft" action="<?= base_url('/aircraft/edit') ?>">
-            <input type="hidden" name="id" id="id" value="<?php echo $aircraft_obj['id']; ?>">
-
+        <form method="post" id="update_aircraft" name="update_aircraft" action="<?= base_url('/aircraft/edit/' . $aircraft_obj['id']) ?>">
             <div class="form-group">
                 <label>Modelo</label>
                 <input type="text" name="model" class="form-control" value="<?php echo $aircraft_obj['model']; ?>">
@@ -57,7 +55,10 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-danger btn-block">Enviar</button>
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+            </div>
+            <div class="form-group">
+                <button type="btn" class="btn btn-danger btn-block" onclick="location.href = '<?= base_url('/aircraft/list') ?>';">Voltar</button>
             </div>
         </form>
     </div>

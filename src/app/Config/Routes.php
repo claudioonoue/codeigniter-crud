@@ -39,7 +39,7 @@ $routes->get('aircraft/list', 'Aircraft::index');
 $routes->get('aircraft/create', 'Aircraft::create');
 $routes->post('aircraft/create', 'Aircraft::store');
 $routes->get('aircraft/edit/(:num)', 'Aircraft::singleAircraft/$1');
-$routes->post('aircraft/edit', 'Aircraft::update');
+$routes->post('aircraft/edit/(:num)', 'Aircraft::update/$1');
 $routes->get('aircraft/delete/(:num)', 'Aircraft::delete/$1');
 
 /*
