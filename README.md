@@ -2,7 +2,7 @@
 
 This project was developed using the CodeIgniter 4 framework. <br /><br />
 
-**IMPORTANT**: Here you will find ways to run this project. If you want more specific information about the developed project and its contexts, visit: [DOC.md](./docs/DOC.md).
+**IMPORTANT**: Here you will **ONLY** find ways to run this project. If you want more specific information about the developed project and its contexts, visit: [DOC.md](./docs/DOC.md).
 
 <br />
 
