@@ -20,7 +20,7 @@
 
 <body>
     <div class="container mt-5">
-        <form method="post" id="update_aircraft" name="update_aircraft" action="<?= base_url('/update') ?>">
+        <form method="post" id="update_aircraft" name="update_aircraft" action="<?= base_url('/aircraft/edit') ?>">
             <input type="hidden" name="id" id="id" value="<?php echo $aircraft_obj['id']; ?>">
 
             <div class="form-group">

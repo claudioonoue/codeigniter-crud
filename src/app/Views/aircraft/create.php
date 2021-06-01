@@ -20,7 +20,7 @@
 
 <body>
     <div class="container mt-5">
-        <form method="post" id="add_create" name="add_create" action="<?= base_url('/submit-form') ?>">
+        <form method="post" id="add_create" name="add_create" action="<?= base_url('/aircraft/create') ?>">
             <div class="form-group">
                 <label>Modelo</label>
                 <input type="text" name="model" class="form-control">

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AircraftModel;
 
-class Aircraftcrud extends BaseController
+class Aircraft extends BaseController
 {
     public function index()
     {
@@ -30,7 +30,7 @@ class Aircraftcrud extends BaseController
         ];
 
         $aircraftModel->insert($data);
-        return $this->response->redirect(base_url('/aircrafts-list'));
+        return $this->response->redirect(base_url('/aircraft/list'));
     }
 
     public function singleAircraft($id = null)
@@ -51,13 +51,13 @@ class Aircraftcrud extends BaseController
             'numberOfEngines' => $this->request->getVar('numberOfEngines'),
         ];
         $aircraftModel->update($id, $data);
-        return $this->response->redirect(base_url('/aircrafts-list'));
+        return $this->response->redirect(base_url('/aircraft/list'));
     }
 
     public function delete($id = null)
     {
         $aircraftModel = new AircraftModel();
         $data['aircraft'] = $aircraftModel->where('id', $id)->delete($id);
-        return $this->response->redirect(base_url('/aircrafts-list'));
+        return $this->response->redirect(base_url('/aircraft/list'));
     }
 }

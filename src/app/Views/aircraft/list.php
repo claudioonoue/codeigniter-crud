@@ -12,7 +12,7 @@
 
     <div class="container mt-4">
         <div class="d-flex justify-content-end">
-            <a href="<?php echo base_url('/aircraft-form') ?>" class="btn btn-success mb-2">Novo</a>
+            <a href="<?php echo base_url('/aircraft/create') ?>" class="btn btn-success mb-2">Novo</a>
         </div>
         <?php
         if (isset($_SESSION['msg'])) {
@@ -39,13 +39,31 @@
                                 <td><?php echo $aircraft['id']; ?></td>
                                 <td><?php echo $aircraft['model']; ?></td>
                                 <td><?php echo $aircraft['brand']; ?></td>
-                                <td><?php echo $aircraft['type']; ?></td>
-                                <td><?php echo $aircraft['numberOfEngines']; ?></td>
-                                <td><?php echo $aircraft['createdAt']; ?></td>
-                                <td><?php echo $aircraft['updatedAt']; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url('edit-view/' . $aircraft['id']); ?>" class="btn btn-primary btn-sm">Editar</a>
-                                    <a href="<?php echo base_url('delete/' . $aircraft['id']); ?>" class="btn btn-danger btn-sm">Deletar</a>
+                                    <?php
+                                    $aircraftTypes = [
+                                        'airplane' => 'Avião',
+                                        'helicopter' => 'Helicóptero'
+                                    ];
+                                    echo $aircraftTypes[$aircraft['type']];
+                                    ?>
+                                </td>
+                                <td><?php echo $aircraft['numberOfEngines']; ?></td>
+                                <td>
+                                    <?php
+                                    $createdAt = new DateTime($aircraft['createdAt']);
+                                    echo $createdAt->format('d/m/Y H:i:s');
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $updatedAt = new DateTime($aircraft['updatedAt']);
+                                    echo $updatedAt->format('d/m/Y H:i:s');
+                                    ?>
+                                </td>
+                                <td>
+                                    <a href="<?php echo base_url('aircraft/edit/' . $aircraft['id']); ?>" class="btn btn-primary btn-sm">Editar</a>
+                                    <a href="<?php echo base_url('aircraft/delete/' . $aircraft['id']); ?>" class="btn btn-danger btn-sm">Deletar</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -56,13 +74,6 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#aircrafts-list').DataTable();
-        });
-    </script>
 </body>
 
 </html>

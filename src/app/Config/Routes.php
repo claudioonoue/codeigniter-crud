@@ -35,12 +35,12 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 
-$routes->get('aircrafts-list', 'AircraftCRUD::index');
-$routes->get('aircraft-form', 'AircraftCRUD::create');
-$routes->post('submit-form', 'AircraftCRUD::store');
-$routes->get('edit-view/(:num)', 'AircraftCRUD::singleAircraft/$1');
-$routes->post('update', 'AircraftCRUD::update');
-$routes->get('delete/(:num)', 'AircraftCRUD::delete/$1');
+$routes->get('aircraft/list', 'Aircraft::index');
+$routes->get('aircraft/create', 'Aircraft::create');
+$routes->post('aircraft/create', 'Aircraft::store');
+$routes->get('aircraft/edit/(:num)', 'Aircraft::singleAircraft/$1');
+$routes->post('aircraft/edit', 'Aircraft::update');
+$routes->get('aircraft/delete/(:num)', 'Aircraft::delete/$1');
 
 /*
  * --------------------------------------------------------------------
