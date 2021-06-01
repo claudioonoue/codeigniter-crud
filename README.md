@@ -16,7 +16,7 @@ For Windows:
 - Via Docker;
 - Via XAMPP/WAMPP.
 
-PS: The easiest ways have been listed, but feel free to run the project in the way that suits you best.
+**PS: The easiest ways have been listed, but feel free to run the project in the way that suits you best.**
 
 <br />
 
